@@ -33,6 +33,13 @@ versionRange = "[0.2.2+mc1.20.4, )"
 ordering = "NONE"
 side = "CLIENT"
 
+[[dependencies.mixy]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[11,)"
+ordering = "NONE"
+side = "CLIENT"
+
 [[mixins]]
 config = "voxy.mixins.json"
 
