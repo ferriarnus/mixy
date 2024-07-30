@@ -33,6 +33,13 @@ versionRange = "[0.2.2+mc1.20.1, )"
 ordering = "NONE"
 side = "CLIENT"
 
+[[dependencies.mixy]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[11,)"
+ordering = "NONE"
+side = "CLIENT"
+
 #[[accessTransformers]]
 #file="META-INF/accesstransformer.cfg"
 
