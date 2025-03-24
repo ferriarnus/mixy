@@ -1,10 +1,10 @@
 package me.cortex.voxy.client.core.rendering;
 
+import me.cortex.voxy.client.AccessFrustumIntersection;
 import me.cortex.voxy.client.core.gl.GlBuffer;
 import me.cortex.voxy.client.core.gl.shader.Shader;
 import me.cortex.voxy.client.core.gl.shader.ShaderType;
 import me.cortex.voxy.client.core.rendering.util.UploadStream;
-import me.cortex.voxy.client.mixin.joml.AccessFrustumIntersection;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -96,7 +96,7 @@ public class Gl46FarWorldRenderer extends AbstractFarWorldRenderer<Gl46Viewport>
         MemoryUtil.memPutInt(ptr, this.sy); ptr += 4;
         MemoryUtil.memPutInt(ptr, this.sz); ptr += 4;
         MemoryUtil.memPutInt(ptr, this.geometry.getSectionCount()); ptr += 4;
-        var planes = ((AccessFrustumIntersection)this.frustum).getPlanes();
+        var planes = AccessFrustumIntersection.getPlanes(this.frustum);
         for (var plane : planes) {
             plane.getToAddress(ptr); ptr += 4*4;
         }
